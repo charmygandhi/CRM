@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Customers</h1>
+
+<%= link_to 'New Customer', new_customer_path(@customer) %>
+<%= '-' %>
+<%= link_to 'Alphabetized', 'alphabetized' %>
+<%= '-' %>
+<%= link_to 'Missing Email', 'missing_email' %>
+
+<br>
+
+<% customers = Customer.order(:fullname) %>
+<% customers.each do |c| %>
+
+    <%= render partial: 'customers/customer', locals: {customer: c}%>
+
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Customers</h1>
+
+<%= link_to 'New Customer', new_customer_path(@customer) %>
+<%= '-' %>
+<%= link_to 'Alphabetized', 'alphabetized' %>
+<%= '-' %>
+<%= link_to 'Home', root_path %>
+
+<br>
+
+<% customers = Customer.where("email LIKE ''") %>
+
+<% customers.each do |c| %>
+
+    <%= render partial: 'customers/customer', locals: {customer: c}%>
+
+<% end %>

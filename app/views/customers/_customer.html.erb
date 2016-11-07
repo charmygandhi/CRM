@@ -1,11 +1,11 @@
-
-      <tr>
-        <td><%= customer.fullname %></td>
-        <td><%= customer.phone %></td>
-        <td><%= customer.email %></td>
-        <td><%= image_tag(customer.image, :width => 100, :height => 150)%></td>
-        <td><%= customer.notes %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<ul>
+  <li><%= link_to 'Delete', customer, method: :delete, data: {confirm: 'Are you sure?'} %></li>
+  <li><%= link_to 'Edit', edit_customer_path(customer) %></li>
+  <br>
+  <li><h1><%= customer.fullname %></h1></li>
+  <li><%= image_tag(customer.image, size: "130x150") %></li>
+  <li><strong>Phone:</strong> <%= customer.phone %></li>
+  <li><strong>Email:</strong> <%= customer.email %></li>
+  <li><strong>Notes:</strong> <%= customer.notes %></li>
+  <!--<li><%= link_to 'Show', customer %></li>-->
+</ul>
