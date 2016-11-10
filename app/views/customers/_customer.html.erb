@@ -7,5 +7,11 @@
   <li><strong>Phone:</strong> <%= customer.phone %></li>
   <li><strong>Email:</strong> <%= customer.email %></li>
   <li><strong>Notes:</strong> <%= customer.notes %></li>
+  <li><strong>Province:</strong>
+  <% if !customer.province_id.nil? %>
+    <%= customer.province.name %></li>
+  <%else%>
+    <%= "None" %></li>
+  <%end%>
   <!--<li><%= link_to 'Show', customer %></li>-->
 </ul>
